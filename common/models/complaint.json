@@ -43,7 +43,7 @@
       "model": "User",
       "foreignKey": "userId",
       "options": {
-        "nestRemoting": true
+        "nestRemoting": false
       }
     },
     "category": {
@@ -51,10 +51,44 @@
       "model": "Category",
       "foreignKey": "categoryId",
       "options": {
-        "nestRemoting": true
+        "nestRemoting": false
       }
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "property": "create",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "property": "patchAttributes",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "property": "deleteById",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }

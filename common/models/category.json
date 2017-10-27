@@ -25,16 +25,16 @@
   "relations": {},
   "acls": [
     {
-        "accessType": "*",
-        "permission": "DENY",
-        "principalType": "ROLE",
-        "principalId": "$everyone"
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
     },
     {
-        "accessType": "READ",
-        "permission": "ALLOW",
-        "principalType": "ROLE",
-        "principalId": "$authenticated"
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
     }
   ],
   "methods": {}

@@ -38,5 +38,9 @@
   "Category": {
     "dataSource": "db",
     "public": true
+  },
+  "Complaint": {
+    "dataSource": "db",
+    "public": true
   }
 }

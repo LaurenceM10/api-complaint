@@ -1,0 +1,48 @@
+{
+  "name": "Picture",
+  "plural": "Pictures",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "complaintId": {
+      "type": "number",
+      "required": true
+    },
+    "userId": {
+      "type": "number",
+      "required": true
+    },
+    "enabled": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "hidden": [
+    "userId"
+  ],
+  "validations": [],
+  "relations": {
+    "complaint": {
+      "type": "belongsTo",
+      "model": "Complaint",
+      "foreignKey": "complaintId",
+      "options": {
+        "nestRemoting": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

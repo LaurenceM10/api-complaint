@@ -42,5 +42,9 @@
   "Complaint": {
     "dataSource": "db",
     "public": true
+  },
+  "Picture": {
+    "dataSource": "db",
+    "public": true
   }
 }

@@ -21,7 +21,7 @@
     },
     "userId": {
       "type": "number",
-      "required": true
+      "required": false
     },
     "enabled": {
       "type": "boolean",

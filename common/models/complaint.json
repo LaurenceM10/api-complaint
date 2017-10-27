@@ -36,6 +36,9 @@
       "required": true
     }
   },
+  "hidden": [
+    "userId"
+  ],
   "validations": [],
   "relations": {
     "user": {
@@ -72,22 +75,22 @@
       "accessType": "WRITE",
       "principalType": "ROLE",
       "principalId": "$authenticated",
-      "property": "create",
-      "permission": "ALLOW"
+      "permission": "ALLOW",
+      "property": "create"
     },
     {
       "accessType": "WRITE",
       "principalType": "ROLE",
       "principalId": "$owner",
-      "property": "patchAttributes",
-      "permission": "ALLOW"
+      "permission": "ALLOW",
+      "property": "patchAttributes"
     },
     {
       "accessType": "WRITE",
       "principalType": "ROLE",
       "principalId": "$owner",
-      "property": "deleteById",
-      "permission": "ALLOW"
+      "permission": "ALLOW",
+      "property": "deleteById"
     }
   ],
   "methods": {}

@@ -1,0 +1,26 @@
+version: '3'
+
+volumes:
+  postgres-data:
+    driver: local
+services:
+
+  # postgres
+  # heroku.postgres.version = 9.6.5
+  postgres:
+    image: postgres:9.6.5
+    ports:
+      - 5432:5432
+    volumes:
+      # Mount the DB dumps folder into the container, to be able to create & access database dumps:
+      - ./db/dumps:/db/dumps
+      # Mount out tmp folder, we might want to have access to something there during development:
+      - ./tmp:/tmp
+      # Mount our 'restoredb' script:
+#      - ./bin/restoredb:/bin/restoredb:ro
+      # Mount our 'dumpdb' script:
+#      - ./bin/dumpdb:/bin/dumpdb:ro
+      # Mount the 'postgres-data' volume into the location Postgres stores it's data:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD:

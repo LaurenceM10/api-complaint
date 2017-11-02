@@ -6,6 +6,9 @@
   "options": {
     "validateUpsert": true
   },
+  "hidden": [
+    "userId"
+  ],
   "properties": {
     "title": {
       "type": "string",
@@ -36,9 +39,6 @@
       "required": true
     }
   },
-  "hidden": [
-    "userId"
-  ],
   "validations": [],
   "relations": {
     "user": {
@@ -53,6 +53,14 @@
       "type": "belongsTo",
       "model": "Category",
       "foreignKey": "categoryId",
+      "options": {
+        "nestRemoting": false
+      }
+    },
+    "pictures": {
+      "type": "hasMany",
+      "model": "Picture",
+      "foreignKey": "complaintId",
       "options": {
         "nestRemoting": false
       }

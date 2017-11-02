@@ -6,6 +6,9 @@
   "options": {
     "validateUpsert": true
   },
+  "hidden": [
+    "userId"
+  ],
   "properties": {
     "title": {
       "type": "string",
@@ -29,9 +32,6 @@
       "default": true
     }
   },
-  "hidden": [
-    "userId"
-  ],
   "validations": [],
   "relations": {
     "complaint": {

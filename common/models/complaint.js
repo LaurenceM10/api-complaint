@@ -1,5 +1,4 @@
 'use strict';
-var loopback = require('loopback');
 
 module.exports = function(Complaint) {
 
@@ -9,17 +8,18 @@ module.exports = function(Complaint) {
     next();
   });
 
-  Complaint.me = function(cb) {
-    var ctx = loopback.getCurrentContext();
-
+  Complaint.me = function(options, cb) {
     Complaint.find({
       where: {
-        userId: ctx.active.http.req.accessToken.userId
+        userId: options.accessToken.userId
       }
     }, cb);
   }
 
   Complaint.remoteMethod('me', {
+    http: {
+      verb: 'get'
+    },
     returns: {
       root: true
     }

@@ -106,7 +106,23 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "me"
-    },
+    }
   ],
-  "methods": {}
+  "methods": {
+    "me": {
+      "accepts": [
+        {
+          "arg": "options",
+          "type": "object",
+          "http": "optionsFromRequest"
+        }
+      ],
+      "http": {
+        "verb": "GET"
+      },
+      "returns" : {
+        "root": true
+      }
+    }
+  }
 }

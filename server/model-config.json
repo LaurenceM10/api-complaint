@@ -46,5 +46,9 @@
   "Picture": {
     "dataSource": "db",
     "public": true
+  },
+  "Avatar": {
+    "dataSource": "db",
+    "public": true
   }
 }
